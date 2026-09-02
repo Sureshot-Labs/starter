@@ -16,9 +16,9 @@ throughout this guide — because you need the real identifiers to reproduce
 anything stated here. They refer to the same silicon as "HoloDi S1 SoC".
 
 Sureshot Labs' role is productisation, sustained support and certification of
-that design; the design itself is not proprietary to us, which is why every
-page here can point straight at the complete upstream source (see
-[Attribution](#attribution) and [docs/resources.md](docs/resources.md)).
+that design. Because the design stays open, every page here can point straight
+at the complete upstream source (see [Attribution](#attribution) and
+[docs/resources.md](docs/resources.md)).
 
 ---
 
@@ -153,5 +153,5 @@ others. Nothing here relicenses that work.
   upstream, so [LICENSE](LICENSE) names it explicitly instead.
 - The **HoloDi S1 / Baochip-1x design itself is CERN-OHL-W-2.0** and is *not*
   covered by this repository's MIT licence. Sureshot Labs productises,
-  supports and certifies that design; we do not own it, and the complete
-  source for it stays with the upstream projects above.
+  supports and certifies that design; the complete source for it stays with
+  the upstream projects above.
