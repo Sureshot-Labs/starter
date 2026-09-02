@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: MIT -->
 # 3. Resources & Cross-References
 
-A curated, annotated index of everything worth bookmarking for Bao1x / Dabao
+A curated, annotated index of everything worth bookmarking for HoloDi S1 / Dabao
 development. Grouped by what you're trying to do.
 
 ---
@@ -48,7 +48,7 @@ that must be updated** before the flashing flow above behaves as documented.
 
 ---
 
-## Chip / SoC internals (Bao1x)
+## Chip / SoC internals (HoloDi S1 / `bao1x`)
 
 | Topic | Reference |
 | --- | --- |

@@ -1,10 +1,26 @@
 <!-- SPDX-License-Identifier: MIT -->
-# Getting Started with Baochip (Dabao / Bao1x)
+# Getting Started with the HoloDi S1 SoC
 
-A curated starting point for bare-metal development on the **Baochip Dabao**
-evaluation board (Bao1x RISC-V SoC). This repo gathers the key resources,
+A curated starting point for bare-metal development on the **HoloDi S1 SoC**,
+using the **Baochip Dabao** evaluation board. This repo gathers the key resources,
 walks through a working toolchain setup, and ships a few runnable examples so
 you can go from an unboxed board to blinking an LED and printing over serial.
+
+## Naming: HoloDi S1 and Baochip-1x
+
+The **HoloDi S1 SoC** is Sureshot Labs' productisation of the open-source
+**Baochip-1x** design, published under the **CERN-OHL-W-2.0** licence.
+"Baochip-1x" and "bao1x" are the upstream identifiers, and they appear
+verbatim in repository paths, register names, tool paths and file names
+throughout this guide — because you need the real identifiers to reproduce
+anything stated here. They refer to the same silicon as "HoloDi S1 SoC".
+
+Sureshot Labs' role is productisation, sustained support and certification of
+that design; the design itself is not proprietary to us, which is why every
+page here can point straight at the complete upstream source (see
+[Attribution](#attribution) and [docs/resources.md](docs/resources.md)).
+
+---
 
 > **What this repo is:** a getting-started guide and example collection that
 > cross-references the upstream drivers, board docs, and chip references.
@@ -17,7 +33,7 @@ you can go from an unboxed board to blinking an LED and printing over serial.
 
 ## Contents
 
-- [What is Baochip?](#what-is-baochip)
+- [What is the HoloDi S1?](#what-is-the-holodi-s1)
 - [Quick Start (TL;DR)](#quick-start-tldr)
 - [Documentation](#documentation)
   - [1. Environment Setup](docs/setup.md)
@@ -29,10 +45,10 @@ you can go from an unboxed board to blinking an LED and printing over serial.
 
 ---
 
-## What is Baochip?
+## What is the HoloDi S1?
 
-**Baochip** is an open hardware project centered on the **Bao1x** RISC-V SoC.
-The **Dabao** is the evaluation board built around that chip.
+The **HoloDi S1** is a RISC-V SoC — upstream, the open hardware **Baochip-1x**
+(`bao1x`) design. The **Dabao** is the evaluation board built around that chip.
 
 - **CPU:** RISC-V `rv32imac` core (target triple `riscv32imac-unknown-none-elf`)
 - **Firmware model:** signed firmware blobs packed as **UF2**, copied to the
@@ -118,14 +134,24 @@ Read these **before** wiring anything to the board:
 
 ## Attribution
 
-This is a getting-started guide that packages and cross-references work by others:
+This is a getting-started guide that packages and cross-references work by
+others. Nothing here relicenses that work.
 
-- **baochip-sdk** — drivers, examples, and the C FFI header — © 2026 Sam Blenny,
-  MIT licensed: https://github.com/samblenny/baochip-sdk
-- **xous-core / bao1x-hal** — upstream platform, HAL, and signing tooling —
-  betrusted-io: https://github.com/betrusted-io/xous-core
-- **Dabao hardware** — https://github.com/baochip/dabao
+| Upstream | What this repo uses | Licence |
+| --- | --- | --- |
+| [baochip/dabao](https://github.com/baochip/dabao) — the Baochip-1x design and Dabao board | The hardware this guide targets: pinout, schematic, electrical limits | **CERN-OHL-W-2.0** |
+| [samblenny/baochip-sdk](https://github.com/samblenny/baochip-sdk) — © 2026 Sam Blenny | The files in [`examples/`](examples/), copied verbatim, and the C FFI header | **MIT** |
+| [betrusted-io/xous-core](https://github.com/betrusted-io/xous-core) — `bao1x-hal`, bare-metal platform, signing tooling | Referenced only; no code copied | **Apache-2.0** |
 
-The example source files in [`examples/`](examples/) retain their original
-SPDX headers and copyright. This repository is MIT licensed (see
-[LICENSE](LICENSE)).
+**Which licence covers what:**
+
+- This repository's own material — the README, [`docs/`](docs/) — is MIT; see
+  [LICENSE](LICENSE).
+- The files in [`examples/`](examples/) are Sam Blenny's under MIT and keep his
+  copyright. `blinky.rs`, `uart.rs`, `timer0.rs` and `baochip_sdk.h` carry his
+  original SPDX headers verbatim; `hello_c.c` carries none because it has none
+  upstream, so [LICENSE](LICENSE) names it explicitly instead.
+- The **HoloDi S1 / Baochip-1x design itself is CERN-OHL-W-2.0** and is *not*
+  covered by this repository's MIT licence. Sureshot Labs productises,
+  supports and certifies that design; we do not own it, and the complete
+  source for it stays with the upstream projects above.

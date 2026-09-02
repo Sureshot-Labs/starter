@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: MIT -->
 # 1. Environment Setup
 
-The toolchain builds `rv32imac` firmware for the Bao1x. You need Rust (for the
+The toolchain builds `rv32imac` firmware for the HoloDi S1 SoC. You need Rust (for the
 drivers), a RISC-V GCC + picolibc (for C code and linking), and a few LLVM
 binary tools (for post-build packaging).
 
