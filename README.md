@@ -71,6 +71,14 @@ A fuller, annotated list is in [docs/resources.md](docs/resources.md).
 
 ---
 
+## First connection with just a USB cable
+
+1. Hold **PROG** while connecting the Dabao to your computer with a USB data cable, then release it.
+2. Look for a drive named **BAOCHIP** and a new USB serial port. Seeing both confirms that the bootloader is ready. You can complete this check with the headers empty and the installed firmware in place.
+3. If neither appears, try a known USB data cable. For the next step, you can build the examples on your computer with the board unplugged. To observe them on hardware, `blinky` needs an external LED and the UART examples need a serial adapter.
+
+If you are porting an OS, start with the [hardware and register references](docs/resources.md) and the [community C SDK](https://github.com/ArmstrongSubero/dabao-sdk). Compare its startup code and linker script with your port before building your first image. Keep a matching recovery image for the firmware currently installed before flashing the board.
+
 ## Quick Start (TL;DR)
 
 Full detail lives in the docs pages linked below — this is the 60-second version.
@@ -88,6 +96,7 @@ make blinky
 
 # 4. Flash: copy the UF2 to the board's USB volume, then press PROG.
 cp examples/blinky.uf2 /Volumes/BAOCHIP && sync   # macOS
+diskutil unmount /Volumes/BAOCHIP                 # then press PROG with bootwait enabled
 ```
 
 Then jump to:
